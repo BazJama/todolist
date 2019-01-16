@@ -1,0 +1,38 @@
+<html>
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
+    <!-- <script src="./node_modules/popper.js/dist/popper.js"></script> -->
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script src="./node_modules/vue-resource/dist/vue-resource.js"></script>
+    <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.css" />
+    <body>
+        <div id='app'>
+           <App>
+            <input v-model="name" placeholder="name"> 
+            <br>
+            <input v-model="description" placeholder="description"> 
+            <br>
+            <input v-model="completed" placeholder="completed"> 
+            <br>
+            <input v-model="assignedTo" placeholder="assignedTo"> 
+            <br>
+            <button v-on:click="post">invia dati post</button>
+            <button v-on:click="loadToDos">visualizza todo</button>
+            <button v-on:click="deleteToDo">elimina todo</button>
+            <div class="row">
+                <div class="col-sm">
+                        <ul class="list-group">
+                            <p> 
+                                <li  v-for='toDo in toDos' class="list-group-item">id: {{ toDo.id }}<br>name: {{ toDo.name }}<br>description: {{ toDo.description }}<br>completed: {{ toDo.completed }}<br>assignedTo: {{ toDo.assignedTo }} </li>   </p>
+                                <input v-model="toDoId" placeholder="id da eliminare"> 
+
+                                  
+                               
+                            </ul>
+                    </div>
+
+        </div>
+    </App>
+    </body>
+    <script src="./app.js"></script>
+</html>
